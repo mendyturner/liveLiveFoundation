@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LiveLIVE Foundation | 12 Days of Giving</title>
+    <meta
+      name="description"
+      content="Join LiveLIVE Foundation’s 12 Days of Giving to support single-parent households and military veterans with emergency assistance, wellness care, and community hope."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --foundation-red: #ED1C24;
+        --foundation-red-deep: #BF0A16;
+        --coal: #050505;
+        --ink: #121212;
+        --charcoal: #1E1E1E;
+        --soft-white: #F8F5F2;
+        --muted-white: rgba(248, 245, 242, 0.8);
+        --warm-gray: #C4C3C0;
+        --gold: #FFC857;
+        --burgundy: #60070B;
+        --card-bg: rgba(255, 255, 255, 0.03);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Montserrat', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        color: var(--soft-white);
+        background:
+          radial-gradient(circle at top right, rgba(237, 28, 36, 0.18), transparent 45%),
+          radial-gradient(circle at 20% 20%, rgba(255, 117, 117, 0.25), transparent 55%),
+          linear-gradient(135deg, #060606, #0f0f0f 45%, #1b1b1b 100%);
+        min-height: 100vh;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid rgba(237, 28, 36, 0.35);
+      }
+
+      .nav {
+        margin: 0 auto;
+        padding: 18px clamp(20px, 6vw, 72px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1200px;
+      }
+
+      .logo-lockup {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .foundation-logo {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        padding: 8px 14px 12px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      .foundation-logo .script-wordmark {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.6rem;
+        line-height: 0.9;
+        color: #000;
+        position: relative;
+        margin-bottom: 2px;
+      }
+
+      .foundation-logo .script-wordmark::after {
+        content: '★';
+        font-size: 1.2rem;
+        color: var(--foundation-red);
+        position: absolute;
+        top: 0.1rem;
+        right: -0.4rem;
+      }
+
+      .foundation-logo .block-wordmark {
+        background: var(--foundation-red);
+        color: #fff;
+        width: 100%;
+        padding: 6px 12px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-align: center;
+        letter-spacing: 0.22em;
+      }
+
+      .foundation-logo .tagline {
+        font-size: 0.7rem;
+        letter-spacing: 0.6em;
+        color: #000;
+        margin-top: 8px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 3vw, 24px);
+        font-size: 0.92rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted-white);
+      }
+
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      .stripe-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        border: none;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, var(--foundation-red), var(--foundation-red-deep));
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 14px 30px rgba(237, 28, 36, 0.46);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .stripe-button svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .stripe-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(237, 28, 36, 0.6);
+      }
+
+      main {
+        padding-bottom: 80px;
+      }
+
+      .hero {
+        padding: clamp(48px, 8vw, 108px) clamp(20px, 7vw, 96px) clamp(32px, 6vw, 80px);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: clamp(28px, 6vw, 64px);
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 5vw, 4.4rem);
+        margin: 0 0 18px;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+
+      .hero h1 span {
+        color: var(--foundation-red);
+        display: block;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        font-size: 0.8rem;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+
+      .eyebrow::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--muted-white);
+        margin-bottom: 32px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .ghost-button {
+        padding: 14px 24px;
+        border-radius: 999px;
+        border: 1px solid rgba(248, 245, 242, 0.35);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: var(--soft-white);
+        cursor: pointer;
+        background: transparent;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .ghost-button:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-card {
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
+        padding: clamp(20px, 4vw, 36px);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::after {
+        content: '';
+        position: absolute;
+        inset: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        pointer-events: none;
+      }
+
+      .hero-stats {
+        display: grid;
+        gap: 18px;
+      }
+
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 14px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat strong {
+        font-size: 2rem;
+        color: var(--foundation-red);
+      }
+
+      .stat span {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--muted-white);
+      }
+
+      .highlight-card {
+        background: rgba(237, 28, 36, 0.12);
+        border-radius: 18px;
+        padding: 18px;
+        margin-top: 24px;
+        border: 1px solid rgba(237, 28, 36, 0.4);
+      }
+
+      .highlight-card h3 {
+        margin: 0 0 6px;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: clamp(56px, 8vw, 96px) clamp(20px, 7vw, 96px);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        max-width: 720px;
+        margin-bottom: 40px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2rem, 3.4vw, 3.2rem);
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .section-header p {
+        margin: 16px 0 0;
+        color: var(--muted-white);
+        line-height: 1.7;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: clamp(18px, 4vw, 32px);
+      }
+
+      .impact-card {
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 24px;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+        min-height: 240px;
+      }
+
+      .impact-card::before {
+        content: attr(data-label);
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      .impact-card h3 {
+        margin: 0 0 14px;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: var(--foundation-red);
+      }
+
+      .impact-card p {
+        margin: 0;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .impact-card ul {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .days-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+
+      .day-card {
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .day-card strong {
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+        color: var(--gold);
+      }
+
+      .day-card h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .day-card p {
+        margin: 0;
+        color: var(--muted-white);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .tiers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: clamp(18px, 3vw, 28px);
+      }
+
+      .tier-card {
+        border-radius: 24px;
+        padding: 28px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: grid;
+        gap: 18px;
+      }
+
+      .tier-card h3 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--gold);
+      }
+
+      .tier-card span {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+        color: var(--muted-white);
+      }
+
+      .tier-card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted-white);
+        line-height: 1.6;
+      }
+
+      .cta-panel {
+        margin-top: clamp(36px, 6vw, 64px);
+        padding: clamp(28px, 6vw, 48px);
+        border-radius: 30px;
+        background: linear-gradient(120deg, var(--foundation-red), var(--foundation-red-deep));
+        color: #fff;
+        display: grid;
+        gap: 20px;
+      }
+
+      .cta-panel h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        text-transform: uppercase;
+      }
+
+      .cta-panel p {
+        margin: 0;
+        line-height: 1.7;
+        max-width: 600px;
+      }
+
+      footer {
+        padding: 32px clamp(20px, 6vw, 96px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #050505;
+        color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+      }
+
+      footer a {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      @media (max-width: 768px) {
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo-lockup" aria-label="LiveLIVE Foundation logo">
+          <div class="foundation-logo">
+            <span class="script-wordmark">Live</span>
+            <div class="block-wordmark">LIVE</div>
+            <span class="tagline">FOUNDATION</span>
+          </div>
+          <div>
+            <div style="font-weight:700; letter-spacing:0.18em; font-size:0.85rem;">liveLIVE FOUNDATION</div>
+            <div style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.26em; color:var(--muted-white);">12 Days of Giving</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#impact">Impact</a>
+          <a href="#days">12 Days</a>
+          <a href="#tiers">Ways to give</a>
+          <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+            Donate with Stripe
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">12 days of giving</div>
+          <h1>
+            Fuel hope for single-parent households &amp; veterans
+            <span>December 1–12</span>
+          </h1>
+          <p>
+            Every winter we rally urgent relief for caregivers raising children alone and service members returning to civilian life.
+            Your donation keeps heat flowing, meals stocked, counseling funded, and dignity restored—right when it’s needed most.
+          </p>
+          <div class="hero-actions">
+            <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+              Donate with Stripe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+            <a class="ghost-button" href="#days">See the 12-day plan</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Campaign metrics">
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>326</strong>
+              <span>Families served</span>
+            </div>
+            <div class="stat">
+              <strong>214</strong>
+              <span>Veterans honored</span>
+            </div>
+            <div class="stat">
+              <strong>$150K</strong>
+              <span>Goal in 12 days</span>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <h3>This year’s focus</h3>
+            <p>
+              Emergency grants averaging $500 per household, trauma-informed counseling sessions, and mobile pantry deliveries that
+              stretch every dollar where it counts.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="impact" class="section">
+        <div class="section-header">
+          <h2>Where your gift lands first</h2>
+          <p>
+            We listen to partner agencies in Atlanta, Houston, Fayetteville, and San Diego to dispatch support within 24 hours.
+            Two communities lead our mission this season.
+          </p>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-card" data-label="Priority">
+            <h3>Single-parent households</h3>
+            <p>
+              71% of the families we serve are led by moms. Utilities, child care, and transportation threaten their stability long before
+              holiday wish lists. Your generosity delivers:
+            </p>
+            <ul>
+              <li>Emergency rent + utility catch-up</li>
+              <li>Weekend grocery bundles &amp; diapers</li>
+              <li>Gift cards for winter clothing</li>
+            </ul>
+          </article>
+          <article class="impact-card" data-label="Priority">
+            <h3>Military veterans</h3>
+            <p>
+              We collaborate with VA peer mentors to reach veterans navigating PTSD, unemployment, or housing gaps. During 12 Days of Giving we fund:
+            </p>
+            <ul>
+              <li>Telehealth therapy stipends</li>
+              <li>Hotel vouchers and warm gear</li>
+              <li>Small business micro-grants</li>
+            </ul>
+          </article>
+          <article class="impact-card" data-label="How it works">
+            <h3>Rapid response workflow</h3>
+            <p>
+              Every donation is processed securely through Stripe, logged in our transparency dashboard, and issued to partners within 48 hours.
+              You’ll receive a receipt plus daily progress highlights.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="days" class="section">
+        <div class="section-header">
+          <h2>12 days. 12 acts of radical care.</h2>
+          <p>
+            Follow along as we unlock a new initiative each day. Share the schedule, sponsor a day, or stack matching funds with your company.
+          </p>
+        </div>
+        <div class="days-grid">
+          <article class="day-card">
+            <strong>Day 01</strong>
+            <h4>Heat &amp; Light Fund</h4>
+            <p>Keep power on for 40 single-parent households facing shutoff notices.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 02</strong>
+            <h4>Grocery Dash</h4>
+            <p>Deploy mobile pantry trucks stocked with culturally familiar staples.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 03</strong>
+            <h4>Honor Flights Home</h4>
+            <p>Cover travel for veterans attending urgent medical appointments.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 04</strong>
+            <h4>Childcare Boost</h4>
+            <p>Provide pop-up childcare stipends so parents can work extra shifts.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 05</strong>
+            <h4>Warm Gear Kits</h4>
+            <p>Deliver coats, boots, and thermal layers to unhoused veterans.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 06</strong>
+            <h4>Therapy Sessions</h4>
+            <p>Fund 120 trauma-informed telehealth appointments.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 07</strong>
+            <h4>Teen Tech Lab</h4>
+            <p>Refurbish laptops for teens in single-parent homes.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 08</strong>
+            <h4>Emergency Transport</h4>
+            <p>Gas cards and rideshare credits to get families to work and school.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 09</strong>
+            <h4>Veteran Ventures</h4>
+            <p>Micro-grants for veteran-owned startups covering tooling and permits.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 10</strong>
+            <h4>Holiday Tables</h4>
+            <p>Community dinners with chef partners &amp; live music.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 11</strong>
+            <h4>Rest &amp; Respite</h4>
+            <p>Weekend hotel stays for caregivers in burnout.</p>
+          </article>
+          <article class="day-card">
+            <strong>Day 12</strong>
+            <h4>Legacy Scholarships</h4>
+            <p>College savings deposits honoring veterans and their children.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tiers" class="section">
+        <div class="section-header">
+          <h2>Choose a giving lane</h2>
+          <p>Every contribution is tax-deductible and processed through secure Stripe Checkout. Pick a lane or enter any amount on the donate screen.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier-card">
+            <span>Fuel a moment</span>
+            <h3>$75</h3>
+            <ul>
+              <li>Grocery tote + diapers for a single parent</li>
+              <li>Therapy copay for one veteran</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Secure a week</span>
+            <h3>$250</h3>
+            <ul>
+              <li>Utility assistance to stop disconnection</li>
+              <li>Hotel night and hot meals for two vets</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Anchor a family</span>
+            <h3>$750</h3>
+            <ul>
+              <li>Rent bridge plus childcare stipends</li>
+              <li>Six telehealth therapy sessions</li>
+            </ul>
+          </article>
+          <article class="tier-card">
+            <span>Sponsor a day</span>
+            <h3>$5,000</h3>
+            <ul>
+              <li>Your name or company on one of the 12 actions</li>
+              <li>Custom impact recap &amp; social toolkit</li>
+            </ul>
+          </article>
+        </div>
+        <div class="cta-panel">
+          <h3>Ready to back the 12 Days of Giving?</h3>
+          <p>
+            Tap the button below to open our secure Stripe Checkout page. Prefer ACH, stock, or an employer match?
+            Email <a href="mailto:give@livelive.org" style="color:#fff; font-weight:600;">give@livelive.org</a> and we’ll coordinate within one business day.
+          </p>
+          <div>
+            <a class="stripe-button" href="https://donate.stripe.com/test_dR65nZ1Gh5XW1qY7ss" target="_blank" rel="noopener">
+              Donate with Stripe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> LiveLIVE Foundation. All rights reserved.</div>
+      <div>
+        <a href="mailto:give@livelive.org">give@livelive.org</a> ·
+        <a href="https://instagram.com/livelivefoundation" target="_blank" rel="noopener">Instagram</a> ·
+        <a href="https://www.facebook.com/livelivefoundation" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </footer>
